@@ -1,7 +1,7 @@
 try:
     import numpy as np
     import pandas as pd
-except ModuleNotFoundError:
+except (ModuleNotFoundError, ImportError):
     print("You are probably not running this file on the Anaconda environment; file couldn't import numpy or pandas.")
 import os, sys
 

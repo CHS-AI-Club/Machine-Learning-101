@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 from sklearn.pipeline import make_pipeline
+import pickle
 
 # read in the train_set.csv
 
@@ -32,3 +33,4 @@ from sklearn.pipeline import make_pipeline
 
 
 # fit the regression curve into the original scatter plot
+

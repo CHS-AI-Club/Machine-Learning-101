@@ -3,6 +3,7 @@ try:
     import pandas as pd
 except (ModuleNotFoundError, ImportError):
     print("You are probably not running this file on the Anaconda environment; file couldn't import numpy or pandas.")
+    exit()
 import os, sys
 
 VELOCITY = 335
@@ -31,10 +32,10 @@ def initialize():
         pass
     train_set.to_csv(os.path.join(directory, "train_set.csv"))
     test_set.to_csv(os.path.join(directory, "test_set.csv"))
-    init_program_files(directory)
+    init_program_file(directory)
     self_destroy()
 
-def init_program_files(directory):
+def init_program_file(directory):
     main_path = os.path.join(directory, "main.py")
     with open(main_path, 'w') as f:
         f.write("\n''' Follow the instructions of the comments and put the code blow the lines.")
@@ -44,6 +45,7 @@ def init_program_files(directory):
         f.write("\nfrom sklearn.preprocessing import PolynomialFeatures")
         f.write("\nfrom sklearn.linear_model import LinearRegression")
         f.write("\nfrom sklearn.pipeline import make_pipeline")
+        f.write("\nimport pickle")
         f.write("\n\n# read in the train_set.csv")
         f.write("\n\n\n\n# pull the x and y from the dataset and convert them to np arrays")
         f.write("\n\n\n\n# visualize the data using simple scatter plot")

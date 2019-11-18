@@ -32,11 +32,12 @@ def initialize():
         pass
     train_set.to_csv(os.path.join(directory, "train_set.csv"))
     test_set.to_csv(os.path.join(directory, "test_set.csv"))
-    init_program_file(directory)
+    init_program_files(directory)
     self_destroy()
 
-def init_program_file(directory):
+def init_program_files(directory):
     main_path = os.path.join(directory, "main.py")
+    ipynb_path = os.path.join(directory, "notebook.ipynb")
     with open(main_path, 'w') as f:
         f.write("\n''' Follow the instructions of the comments and put the code blow the lines.")
         f.write("\nif you need help, ask around and check with the officers. '''")
@@ -52,6 +53,7 @@ def init_program_file(directory):
         f.write("\n\n\n\n# make the model and fit the data into it")
         f.write("\n\n\n\n# use the model to predict the bullet drop at 150 meters")
         f.write("\n\n\n\n# fit the regression curve into the original scatter plot")    
+    open(ipynb_path, 'a').close()
 
 def self_destroy():
     os.remove(sys.argv[0])
